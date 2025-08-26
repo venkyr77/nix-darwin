@@ -1,10 +1,8 @@
 {user, ...}: {
   homebrew = {
-    brews = [
-      "tailscale"
-    ];
     casks = [
       "brave-browser"
+      "tailscale-app"
     ];
     enable = true;
     onActivation = {
