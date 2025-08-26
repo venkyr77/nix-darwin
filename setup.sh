@@ -26,7 +26,6 @@ HandleStepEnd
 
 PrintStep "Installing nix"
 curl -L https://nixos.org/nix/install | sh -s -- --daemon
-
 export PATH=/nix/var/nix/profiles/default/bin/:${HOME}/.nix-profile/bin/:$PATH
 HandleStepEnd
 
@@ -34,4 +33,8 @@ PrintStep "Installing home-manager"
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 nix-shell '<home-manager>' -A install
+HandleStepEnd
+
+PrintStep "Installing xcode-select"
+xcode-select --install
 HandleStepEnd
