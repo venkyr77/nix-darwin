@@ -14,6 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-darwin/nix-darwin/master";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     wezterm = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +25,7 @@
   outputs = {
     home-manager,
     nix-darwin,
+    nix-homebrew,
     nixpkgs,
     self,
     ...
@@ -54,6 +56,7 @@
       nix-darwin.lib.darwinSystem {
         modules = [
           home-manager.darwinModules.home-manager
+          nix-homebrew.darwinModules.nix-homebrew
           {
             system.configurationRevision = self.rev or self.dirtyRev or null;
           }
