@@ -19,11 +19,9 @@ HandleStepEnd() {
 PrintStep "SETTING UP MAC........................."
 HandleStepEnd
 
-PrintStep "Deleting ~/.zshrc, ~/.zshenv, ~/.gitconfig, ~/.config/rde"
-sudo rm -rf "${HOME}"/.zshrc "${HOME}"/.zshenv "${HOME}"/.gitconfig "${HOME}"/.config/rde
-
+PrintStep "Deleting ~/.zshrc, ~/.zshenv"
+sudo rm -rf "${HOME}"/.zshrc "${HOME}"/.zshenv
 ls -al "${HOME}"/
-ls -al "${HOME}"/.config/
 HandleStepEnd
 
 PrintStep "Installing nix"
