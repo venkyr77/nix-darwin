@@ -24,6 +24,10 @@ sudo rm -rf "${HOME}"/.zshrc "${HOME}"/.zshenv
 ls -al "${HOME}"/
 HandleStepEnd
 
+PrintStep "Generating ssh key"
+ssh-keygen -t ed25519 -C "venkyrocker7777@gmail.com"
+HandleStepEnd
+
 PrintStep "Installing nix"
 curl -L https://nixos.org/nix/install | sh -s -- --daemon
 export PATH=/nix/var/nix/profiles/default/bin/:${HOME}/.nix-profile/bin/:$PATH
