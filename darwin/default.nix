@@ -22,6 +22,9 @@
   nixpkgs.hostPlatform = system;
 
   system = {
+    defaults = {
+      NSGlobalDomain."com.apple.swipescrolldirection" = false;
+    };
     primaryUser = user;
     stateVersion = 6;
   };
